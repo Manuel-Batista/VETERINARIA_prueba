@@ -1,0 +1,254 @@
+/* Variables CSS para la Paleta de Colores y Tipografía */
+:root {
+    --primary-color: #2C3E50; /* Azul Oscuro (Base) */
+    --secondary-color: #18BC9C; /* Turquesa/Verde Menta (Acento Principal) */
+    --accent-color: #F39C12; /* Naranja/Amarillo (CTA/Énfasis) */
+    --text-light: #ffffff;
+    --text-dark: #34495e;
+    --font-family-base: 'Arial', sans-serif;
+}
+
+/* Estilos Globales y Tipografía */
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+}
+
+.text-primary-color { color: var(--primary-color) !important; }
+.text-secondary-color { color: var(--secondary-color) !important; }
+.bg-primary-color { background-color: var(--primary-color) !important; }
+.bg-secondary-color { background-color: var(--secondary-color) !important; }
+
+/* Navegación (Menú Fijo) */
+#mainNav {
+    background-color: rgba(44, 62, 80, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#mainNav .navbar-brand, #mainNav .nav-link {
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+#mainNav .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Botón de Contacto en la Nav (Mejora la CTA) */
+.btn-accent-nav {
+    background-color: var(--accent-color) !important;
+    color: var(--text-light) !important;
+    border-radius: 0.25rem;
+    padding: 0.3rem 0.8rem;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+.btn-accent-nav:hover {
+    background-color: #d1870e !important;
+    color: var(--text-light) !important;
+}
+
+/* Sección Inicio (Hero Banner) */
+.hero-banner {
+    background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    padding-top: 56px;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Botón CTA Grande */
+.btn-cta {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #d1870e;
+    border-color: #d1870e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección Servicios Detallados y Blog */
+.service-card-detailed, .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.service-card-detailed:hover, .blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección Equipo y Sobre Nosotros Imagen */
+.team-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 3px solid transparent;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+}
+
+/* Contacto - Mapa */
+.map-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contacto - Tarjeta de Teléfono */
+.contact-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: none;
+}
+
+.contact-card:hover {
+    transform: rotate(2deg) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.btn-accent:hover {
+    background-color: #d1870e;
+    border-color: #d1870e;
+    color: var(--text-light);
+}
+
+.contact-form-shadow {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background-color: var(--text-light);
+}
+
+.btn-primary-color {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-color:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Sección de Testimonios - Carrusel */
+.testimonial-card {
+    border: 4px solid transparent;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+}
+
+/* Animación de Latido del Corazón (Heart Beat) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.heart-beat:hover {
+    animation: pulse 0.8s infinite;
+}
+
+/* Bordes Animados tipo Arcoíris (Mantienen los colores) */
+.border-rainbow-1 { border-color: #ff6347; }
+.border-rainbow-2 { border-color: #ffd700; }
+.border-rainbow-3 { border-color: #3cb371; }
+.border-rainbow-4 { border-color: #4682b4; }
+
+.testimonial-card:hover.border-rainbow-1 { box-shadow: 0 0 15px rgba(255, 99, 71, 0.8); }
+.testimonial-card:hover.border-rainbow-2 { box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
+.testimonial-card:hover.border-rainbow-3 { box-shadow: 0 0 15px rgba(60, 179, 113, 0.8); }
+.testimonial-card:hover.border-rainbow-4 { box-shadow: 0 0 15px rgba(70, 130, 180, 0.8); }
+
+/* Controles de Carrusel Personalizados */
+.btn-carousel-custom {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(44, 62, 80, 0.7);
+    border-radius: 50%;
+    color: var(--text-light);
+    opacity: 0.8;
+    transition: opacity 0.3s, background-color 0.3s;
+    z-index: 10;
+}
+
+.btn-carousel-custom:hover {
+    opacity: 1;
+    background-color: var(--accent-color);
+}
+
+.carousel-control-prev {
+    left: -60px;
+}
+
+.carousel-control-next {
+    right: -60px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .carousel-control-prev {
+        left: 0;
+    }
+    .carousel-control-next {
+        right: 0;
+    }
+    .hero-banner {
+        height: 60vh;
+    }
+}
+
+/* Footer y Redes Sociales */
+.social-icon-hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon-hover:hover {
+    color: var(--secondary-color) !important;
+    transform: scale(1.1);
+}
