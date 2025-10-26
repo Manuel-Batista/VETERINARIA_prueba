@@ -1,254 +1,483 @@
-/* Variables CSS para la Paleta de Colores y Tipografía */
+/* Variables CSS para paleta principal */
 :root {
-    --primary-color: #2C3E50; /* Azul Oscuro (Base) */
-    --secondary-color: #18BC9C; /* Turquesa/Verde Menta (Acento Principal) */
-    --accent-color: #F39C12; /* Naranja/Amarillo (CTA/Énfasis) */
-    --text-light: #ffffff;
-    --text-dark: #34495e;
-    --font-family-base: 'Arial', sans-serif;
+  --color-primario: #2C3E50;
+  --color-secundario: #18BC9C;
+  --color-acento: #F39C12;
+  --color-blanco: #fff;
+  --color-texto: #343a40;
+  --color-testimonio-border-1: #E91E63;
+  --color-testimonio-border-2: #9C27B0;
+  --color-testimonio-border-3: #3F51B5;
+  --color-testimonio-border-4: #2196F3;
+  --color-testimonio-border-5: #009688;
+  --color-testimonio-border-6: #4CAF50;
+  --color-testimonio-border-7: #CDDC39;
+  --color-testimonio-border-8: #FFC107;
+  --color-testimonio-border-9: #FF9800;
+  --color-testimonio-border-10: #FF5722;
 }
 
-/* Estilos Globales y Tipografía */
+/* General */
 body {
-    font-family: var(--font-family-base);
-    color: var(--text-dark);
+  font-family: Arial, sans-serif;
+  color: var(--color-texto);
+  background-color: var(--color-blanco);
+  scroll-behavior: smooth;
+  padding-top: 70px;
 }
 
-.text-primary-color { color: var(--primary-color) !important; }
-.text-secondary-color { color: var(--secondary-color) !important; }
-.bg-primary-color { background-color: var(--primary-color) !important; }
-.bg-secondary-color { background-color: var(--secondary-color) !important; }
-
-/* Navegación (Menú Fijo) */
+/* Navbar */
 #mainNav {
-    background-color: rgba(44, 62, 80, 0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-primario);
 }
 
-#mainNav .navbar-brand, #mainNav .nav-link {
-    color: var(--text-light);
-    transition: color 0.3s ease;
+#mainNav .nav-link {
+  color: var(--color-blanco);
+  font-weight: 600;
 }
 
-#mainNav .nav-link:hover {
-    color: var(--accent-color);
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+  color: var(--color-acento);
 }
 
-/* Botón de Contacto en la Nav (Mejora la CTA) */
-.btn-accent-nav {
-    background-color: var(--accent-color) !important;
-    color: var(--text-light) !important;
-    border-radius: 0.25rem;
-    padding: 0.3rem 0.8rem;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
-}
-.btn-accent-nav:hover {
-    background-color: #d1870e !important;
-    color: var(--text-light) !important;
+/* Banner / Sección Inicio */
+.banner-section {
+  background-color: var(--color-primario);
+  padding: 4rem 1rem 2rem;
+  position: relative;
 }
 
-/* Sección Inicio (Hero Banner) */
-.hero-banner {
-    background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
-    padding-top: 56px;
+.banner-section h1 {
+  font-weight: 900;
+  font-size: 3rem;
 }
 
-.hero-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 0;
+.banner-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Botón CTA Grande */
-.btn-cta {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: var(--text-light);
-    transition: all 0.3s ease;
-}
-
-.btn-cta:hover {
-    background-color: #d1870e;
-    border-color: #d1870e;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Sección Servicios Detallados y Blog */
-.service-card-detailed, .blog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.service-card-detailed:hover, .blog-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Sección Equipo y Sobre Nosotros Imagen */
-.team-card {
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    border: 3px solid transparent;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.team-card:hover {
-    transform: scale(1.05);
-    border-color: var(--secondary-color);
-}
-
-.team-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 5px solid var(--primary-color);
-}
-
-/* Contacto - Mapa */
-.map-container {
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Contacto - Tarjeta de Teléfono */
-.contact-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: none;
-}
-
-.contact-card:hover {
-    transform: rotate(2deg) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
+/* Botón acento */
 .btn-accent {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: var(--text-light);
+  background-color: var(--color-acento);
+  border: none;
+  color: var(--color-blanco);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
 }
 
-.btn-accent:hover {
-    background-color: #d1870e;
-    border-color: #d1870e;
-    color: var(--text-light);
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 0 10px var(--color-secundario);
 }
 
-.contact-form-shadow {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    background-color: var(--text-light);
+/* Secciones */
+section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-.btn-primary-color {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--text-light);
-    transition: background-color 0.3s ease;
+section h2,
+section h3,
+section h4 {
+  font-weight: 700;
 }
 
-.btn-primary-color:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+/* Estilos generales para tarjetas */
+.team-card,
+.blog-card,
+.contact-card {
+  background: var(--color-blanco);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Sección de Testimonios - Carrusel */
-.testimonial-card {
-    border: 4px solid transparent;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-    padding: 1.5rem;
+.team-card:hover,
+.blog-card:hover,
+.contact-card:hover,
+.team-card:focus-within,
+.blog-card:focus-within,
+.contact-card:focus-within {
+  box-shadow: 0 8px 20px rgba(21, 141, 122, 0.6);
+  transform: translateY(-8px);
 }
 
-.testimonial-card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+/* Fotos circulares para equipo */
+.team-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(23, 41, 58, 0.4);
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  display: block;
 }
 
+.team-photo:hover {
+  transform: scale(1.1);
+}
+
+/* Blog cards */
+.blog-card a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.blog-card a:hover,
+.blog-card a:focus {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+/* Formulario */
+form {
+  box-shadow: 0 4px 15px rgba(23, 141, 122, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Map responsive */
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 12px;
+}
+
+/* Testimonios - Carrusel */
+.testimonials-container {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.testimonials-group {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE 10+ */
+  scroll-snap-type: x mandatory;
+}
+
+.testimonials-group::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials-group .card {
+  flex: 0 0 23%;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  border: 3px solid transparent;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.testimonials-group .card:hover {
+  box-shadow: 0 0 20px var(--color-acento);
+  transform: translateY(-5px);
+}
+
+/* Bordes arcoiris animados para testimonios */
+.testimonials-group .card:nth-child(1) {
+  border-image-source: linear-gradient(to right, #E91E63, #FF9800);
+  border-image-slice: 1;
+  animation-name: rainbowBorder1;
+}
+.testimonials-group .card:nth-child(2) {
+  border-image-source: linear-gradient(to right, #9C27B0, #FFC107);
+  border-image-slice: 1;
+  animation-name: rainbowBorder2;
+}
+.testimonials-group .card:nth-child(3) {
+  border-image-source: linear-gradient(to right, #3F51B5, #CDDC39);
+  border-image-slice: 1;
+  animation-name: rainbowBorder3;
+}
+.testimonials-group .card:nth-child(4) {
+  border-image-source: linear-gradient(to right, #2196F3, #4CAF50);
+  border-image-slice: 1;
+  animation-name: rainbowBorder4;
+}
+.testimonials-group .card:nth-child(5) {
+  border-image-source: linear-gradient(to right, #009688, #FF5722);
+  border-image-slice: 1;
+  animation-name: rainbowBorder5;
+}
+.testimonials-group .card:nth-child(6) {
+  border-image-source: linear-gradient(to right, #4CAF50, #E91E63);
+  border-image-slice: 1;
+  animation-name: rainbowBorder6;
+}
+.testimonials-group .card:nth-child(7) {
+  border-image-source: linear-gradient(to right, #CDDC39, #9C27B0);
+  border-image-slice: 1;
+  animation-name: rainbowBorder7;
+}
+.testimonials-group .card:nth-child(8) {
+  border-image-source: linear-gradient(to right, #FFC107, #3F51B5);
+  border-image-slice: 1;
+  animation-name: rainbowBorder8;
+}
+.testimonials-group .card:nth-child(9) {
+  border-image-source: linear-gradient(to right, #FF9800, #2196F3);
+  border-image-slice: 1;
+  animation-name: rainbowBorder9;
+}
+.testimonials-group .card:nth-child(10) {
+  border-image-source: linear-gradient(to right, #FF5722, #009688);
+  border-image-slice: 1;
+  animation-name: rainbowBorder10;
+}
+
+/* Animación bordes arcoiris */
+@keyframes rainbowBorder1 {
+  0% { border-color: #E91E63; }
+  50% { border-color: #FF9800; }
+  100% { border-color: #E91E63; }
+}
+@keyframes rainbowBorder2 {
+  0% { border-color: #9C27B0; }
+  50% { border-color: #FFC107; }
+  100% { border-color: #9C27B0; }
+}
+@keyframes rainbowBorder3 {
+  0% { border-color: #3F51B5; }
+  50% { border-color: #CDDC39; }
+  100% { border-color: #3F51B5; }
+}
+@keyframes rainbowBorder4 {
+  0% { border-color: #2196F3; }
+  50% { border-color: #4CAF50; }
+  100% { border-color: #2196F3; }
+}
+@keyframes rainbowBorder5 {
+  0% { border-color: #009688; }
+  50% { border-color: #FF5722; }
+  100% { border-color: #009688; }
+}
+@keyframes rainbowBorder6 {
+  0% { border-color: #4CAF50; }
+  50% { border-color: #E91E63; }
+  100% { border-color: #4CAF50; }
+}
+@keyframes rainbowBorder7 {
+  0% { border-color: #CDDC39; }
+  50% { border-color: #9C27B0; }
+  100% { border-color: #CDDC39; }
+}
+@keyframes rainbowBorder8 {
+  0% { border-color: #FFC107; }
+  50% { border-color: #3F51B5; }
+  100% { border-color: #FFC107; }
+}
+@keyframes rainbowBorder9 {
+  0% { border-color: #FF9800; }
+  50% { border-color: #2196F3; }
+  100% { border-color: #FF9800; }
+}
+@keyframes rainbowBorder10 {
+  0% { border-color: #FF5722; }
+  50% { border-color: #009688; }
+  100% { border-color: #FF5722; }
+}
+
+/* Imagen cliente circular y latido */
 .client-photo {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 3px solid var(--accent-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  animation: heartbeat 1.5s infinite ease-in-out alternate;
+  margin-bottom: 8px;
 }
 
-/* Animación de Latido del Corazón (Heart Beat) */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 
-.heart-beat:hover {
-    animation: pulse 0.8s infinite;
+/* Botones carrusel fuera */
+.nav-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
-/* Bordes Animados tipo Arcoíris (Mantienen los colores) */
-.border-rainbow-1 { border-color: #ff6347; }
-.border-rainbow-2 { border-color: #ffd700; }
-.border-rainbow-3 { border-color: #3cb371; }
-.border-rainbow-4 { border-color: #4682b4; }
-
-.testimonial-card:hover.border-rainbow-1 { box-shadow: 0 0 15px rgba(255, 99, 71, 0.8); }
-.testimonial-card:hover.border-rainbow-2 { box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
-.testimonial-card:hover.border-rainbow-3 { box-shadow: 0 0 15px rgba(60, 179, 113, 0.8); }
-.testimonial-card:hover.border-rainbow-4 { box-shadow: 0 0 15px rgba(70, 130, 180, 0.8); }
-
-/* Controles de Carrusel Personalizados */
-.btn-carousel-custom {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(44, 62, 80, 0.7);
-    border-radius: 50%;
-    color: var(--text-light);
-    opacity: 0.8;
-    transition: opacity 0.3s, background-color 0.3s;
-    z-index: 10;
+#prevBtn {
+  left: -50px;
 }
 
-.btn-carousel-custom:hover {
-    opacity: 1;
-    background-color: var(--accent-color);
+#nextBtn {
+  right: -50px;
 }
 
-.carousel-control-prev {
-    left: -60px;
+/* Contacto */
+.contact-card {
+  background: var(--color-blanco);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
 }
 
-.carousel-control-next {
-    right: -60px;
+.contact-card:hover,
+.contact-card:focus-within {
+  box-shadow: 0 10px 25px rgba(23, 141, 122, 0.7);
+  transform: translateY(-6px);
 }
 
-/* Media Queries para Responsividad */
-@media (max-width: 992px) {
-    .carousel-control-prev {
-        left: 0;
-    }
-    .carousel-control-next {
-        right: 0;
-    }
-    .hero-banner {
-        height: 60vh;
-    }
+.phone-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-secundario);
 }
 
-/* Footer y Redes Sociales */
-.social-icon-hover {
-    transition: color 0.3s ease, transform 0.3s ease;
+/* Footer links and styling */
+footer {
+  background-color: var(--color-primario);
+  padding: 2.5rem 0;
 }
 
-.social-icon-hover:hover {
-    color: var(--secondary-color) !important;
-    transform: scale(1.1);
+footer a {
+  transition: color 0.3s ease;
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--color-acento);
+  text-decoration: none;
+}
+
+footer p,
+footer small,
+footer h5,
+footer h6 {
+  color: var(--color-blanco);
+}
+
+footer .btn-success {
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .banner-section h1 {
+    font-size: 2rem;
+  }
+
+  .service-detail-card {
+    margin-bottom: 1rem;
+  }
+
+  .testimonials-group .card {
+    flex: 0 0 65%;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-img {
+    height: 200px;
+  }
+}
+
+/* Sección Nuestros Servicios con imágenes y botones */
+.service-card {
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--color-blanco);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  transform: translateY(-7px) scale(1.015);
+  box-shadow: 0 10px 22px rgba(24, 188, 156, 0.14);
+}
+
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-title {
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+  .service-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 575px) {
+  .service-img {
+    height: 120px;
+  }
+
+  .service-card {
+    min-height: 340px;
+  }
+}
+
+/* Modal overrides */
+.modal-content {
+  border-radius: 14px;
+}
+
+.modal-header,
+.modal-footer {
+  border-radius: 14px 14px 0 0;
 }
